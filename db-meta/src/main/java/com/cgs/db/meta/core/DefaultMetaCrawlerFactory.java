@@ -8,6 +8,7 @@ import com.cgs.db.exception.NonTransientDataAccessException;
 import com.cgs.db.meta.retriever.MetaCrawler;
 import com.cgs.db.meta.retriever.MySqlMetaCrawler;
 import com.cgs.db.meta.retriever.OracleMetaCrawler;
+import com.cgs.db.meta.retriever.PostgreSQLMetaCrawler;
 import com.cgs.db.meta.retriever.SqlServerMetaCrawler;
 import com.cgs.db.util.JDBCUtils;
 
@@ -33,6 +34,8 @@ public class DefaultMetaCrawlerFactory implements MetaCrawlerFactory{
 			return new OracleMetaCrawler(dbm);
 		} else if (product.equals("Microsoft SQL Server")) {
 			return new SqlServerMetaCrawler(dbm);
+		} else if (product.equals("PostgreSQL")) {
+			return new PostgreSQLMetaCrawler(dbm);
 		} else {
 			return null;
 		}
