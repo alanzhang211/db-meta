@@ -21,7 +21,6 @@ import com.cgs.db.meta.schema.SchemaInfo;
 import com.cgs.db.meta.schema.Table;
 import com.cgs.db.meta.schema.Trigger;
 import com.cgs.db.util.PrintUtils;
-import com.mysql.jdbc.DatabaseMetaDataUsingInfoSchema;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:config.xml")
@@ -52,7 +51,7 @@ public class MetaLoaderTest {
 	@Test
 //	@Ignore
 	public void getTable() {
-		String tableName = "_123";// Oracle:"PUMP",mySql:"person_info":sql
+		String tableName = "st_main_kpi_d";// Oracle:"PUMP",mySql:"person_info":sql
 													// server:"Dataset"
 		Table table = metaLoader.getTable(tableName);
 		
